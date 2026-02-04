@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio - MD Sakib Chowdhury</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
@@ -62,10 +62,11 @@
                 </ul>
 
                 <!-- Download CV Button (Desktop) - Right aligned -->
-                <button
-                    class="hidden md:block bg-gradient-to-r from-[#ffb224] to-orange-500 px-6 py-2.5 rounded-full text-white font-bold hover:shadow-xl hover:shadow-orange-500/50 hover:scale-105 transition-all duration-300">
+                <a href="Assetes/MD_Sakib_Chowdhury_CV.docx" download="MD_Sakib_Chowdhury_CV.docx"
+                    class="hidden md:block bg-gradient-to-r from-[#ffb224] to-orange-500 px-6 py-2.5 rounded-full text-white font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
                     Download CV
-                </button>
+                </a>
+
             </div>
         </div>
     </nav>
@@ -74,7 +75,7 @@
     <div class="pt-20 md:pt-24"></div>
 
     <!-- Banner -->
-    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-10">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-10" id="home">
         <div
             class="relative flex flex-col lg:flex-row justify-between items-center gap-8 p-6 md:p-10 rounded-3xl overflow-hidden shadow-2xl">
 
@@ -143,13 +144,13 @@
                             class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </button>
-                    <button
-                        class="group relative bg-white/90 backdrop-blur-md border-2 border-gray-300 text-gray-800 px-8 py-3 rounded-full font-bold overflow-hidden hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300">
+                    <a href="#contact"
+                        class="group relative bg-white/90 backdrop-blur-md border-2 border-gray-300 text-gray-800 px-8 py-3 rounded-full font-bold overflow-hidden hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 inline-block">
                         <span class="relative z-10 group-hover:text-white transition-colors duration-300">Contact</span>
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -287,658 +288,579 @@
         }
     </style>
     <style>
-    /* Portfolio Filter */
-    .portfolio {
-        display: block;
-    }
+        /* Portfolio Filter */
+        .portfolio {
+            display: block;
+        }
 
-    #web:checked ~ .container .photo {
-        display: none;
-    }
+        #web:checked~.container .photo {
+            display: none;
+        }
 
-    #photo:checked ~ .container .web {
-        display: none;
-    }
-</style>
+        #photo:checked~.container .web {
+            display: none;
+        }
+    </style>
 
-</body>
-<!-- Dedication Section -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Dedication Section -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- Card 1 -->
-        <div
-            class="relative p-7 rounded-3xl bg-orange-50 border border-orange-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+            <!-- Card 1 -->
+            <div
+                class="relative p-7 rounded-3xl bg-orange-50 border border-orange-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-            <span class="absolute top-4 right-4 text-sm font-semibold text-orange-500">
-                Passion
-            </span>
+                <span class="absolute top-4 right-4 text-sm font-semibold text-orange-500">
+                    Passion
+                </span>
 
-            <h3 class="text-2xl font-bold mb-3 text-orange-500">
-                Dedication 1
-            </h3>
-
-            <p class="text-gray-700 leading-relaxed">
-                This portfolio is dedicated to my passion for web development and continuous
-                learning. It reflects my journey as a MERN stack developer, showcasing the
-                skills, projects, and problem-solving mindset developed through real-world
-                practice.
-            </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div
-            class="relative p-7 rounded-3xl bg-indigo-50 border border-indigo-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-
-            <span class="absolute top-4 right-4 text-sm font-semibold text-indigo-500">
-                Support
-            </span>
-
-            <h3 class="text-2xl font-bold mb-3 text-indigo-500">
-                Dedication 2
-            </h3>
-
-            <p class="text-gray-700 leading-relaxed">
-                I dedicate this portfolio to my family, mentors, and the developer community
-                who inspired and supported me throughout my journey. Their guidance and
-                motivation helped me grow and build meaningful web applications.
-            </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-            class="relative p-7 rounded-3xl bg-emerald-50 border border-emerald-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-
-            <span class="absolute top-4 right-4 text-sm font-semibold text-emerald-500">
-                Growth
-            </span>
-
-            <h3 class="text-2xl font-bold mb-3 text-emerald-500">
-                Dedication 3
-            </h3>
-
-            <p class="text-gray-700 leading-relaxed">
-                This portfolio is dedicated to innovation, creativity, and clean code. It
-                represents my commitment to building scalable, user-focused MERN stack
-                applications and continuously improving as a full-stack developer.
-            </p>
-        </div>
-
-    </div>
-</div>
-
-
-<div class="container mx-auto my-20 px-4">
-    <div class="lg:flex gap-20 items-center">
-        <!-- Images -->
-        <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-10">
-            <div class="relative inline-block">
-                <!-- Main large image -->
-                <img class="w-[350px] md:w-[450px] lg:w-[550px] h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-3xl"
-                    src="Assetes/sakib1.jpg" alt="loading">
-
-                <!-- Small overlapping image at bottom left -->
-                <img class="absolute bottom-[-60px] md:bottom-[-80px] left-[-30px] md:left-[-50px] w-[180px] md:w-[240px] lg:w-[280px] h-[240px] md:h-[300px] lg:h-[360px] object-cover rounded-2xl shadow-2xl border-4 md:border-6 border-white"
-                    src="Assetes/sakib3.jpeg" alt="loading">
-
-                <!-- Decorative Side Images -->
-                <!-- XD Icon - left side middle -->
-                <img class="absolute top-[140px] md:top-[180px] left-[-20px] md:left-[-30px] w-[70px] md:w-[85px] lg:w-[95px]"
-                    src="Assetes/side photo.png" alt="XD">
-
-                <!-- PS Icon - bottom right -->
-                <img class="absolute bottom-[-30px] md:bottom-[-40px] right-[90px] md:right-[80px] lg:right-[100px] w-[70px] md:w-[85px] lg:w-[95px]"
-                    src="Assetes/side photo 2.png" alt="PS">
-
-                <!-- Figma Icon - top right corner -->
-                <img class="absolute top-[-25px] md:top-[-30px] right-[-25px] md:right-[-35px] w-[65px] md:w-[80px] lg:w-[90px]"
-                    src="Assetes/side photo 3.png" alt="Figma">
-            </div>
-        </div>
-        <!-- Text Part -->
-        <div class="lg:w-1/2 mt-32 lg:mt-0">
-            <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold text-sm md:text-base">About Me</p>
-            <h1 class="text-[28px] md:text-[40px] font-bold py-5 leading-tight">World Professional Web Developer
-            </h1>
-            <p class="text-gray-600 text-sm md:text-base font-sans leading-relaxed">
-                I am a passionate and experienced web developer with expertise in creating
-                modern, responsive, and user-friendly websites. My focus is on delivering
-                high-quality code, seamless user experiences, and innovative solutions
-                that help businesses grow in the digital space.
-            </p>
-
-            <!-- Personal Info -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-8 md:mt-10">
-                <div class="space-y-5">
-                    <div>
-                        <h3 class="font-bold text-black">Name</h3>
-                        <p class="text-gray-600">Sakib</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-black">Email</h3>
-                        <p class="text-gray-600">sakib15-2223@diu.edu.bd</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-black">Phone</h3>
-                        <p class="text-gray-600">01706079313</p>
-                    </div>
-                </div>
-
-                <div class="space-y-5">
-                    <div>
-                        <h3 class="font-bold text-black">Birthday</h3>
-                        <p class="text-gray-600">1999</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-black">Education</h3>
-                        <p class="text-gray-600">Computer Science</p>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-black">Address</h3>
-                        <p class="text-gray-600">Bangladesh</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Download CV Button -->
-            <div class="mt-8">
-                <button
-                    class="bg-[#ffb224] px-7 py-3 rounded-lg text-white font-semibold hover:bg-[#ff6b4a] transition duration-300">
-                    Download CV
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Services Section -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-40 text-center">
-
-    <!-- Move slightly down -->
-    <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold mt-10">
-        What I Do
-    </p>
-
-    <h1 class="text-3xl md:text-4xl font-bold py-6">
-        My Services
-    </h1>
-
-    <!-- Colorful Text | 80% Width | No Background -->
-<p class="w-[80%] mx-auto leading-relaxed text-center text-lg">
-
-    <!-- Line 1 -->
-    <span class="block text-indigo-600/90 font-medium">
-        I am a MERN Stack Developer specializing in building scalable full-stack web
-        applications using MongoDB, Express.js, React.js, and Node.js.
-    </span>
-
-    <!-- Line 2 -->
-    <span class="block text-emerald-600/90 font-medium mt-2">
-        I focus on creating secure, user-friendly solutions with clean code, RESTful APIs,
-        and modern UI design.
-    </span>
-
-    <!-- Line 3 -->
-    <span class="block text-rose-600/90 font-medium mt-2">
-        I enjoy solving real-world problems and continuously improving my skills through
-        hands-on projects.
-    </span>
-
-</p>
-
-
-</div>
-
-<!-- Gap/Spacing -->
-<div class="h-16"></div>
-
-<!-- Service Cards Section with Attractive Design -->
-<div class="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
-
-    <!-- Cards Wrapper -->
-    <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-            <!-- Card 1 - Web Development -->
-            <div class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200
-                       shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2
-                       hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
-                <!-- Decorative Element -->
-                <div
-                    class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#ff6b4a]/10 to-purple-100 rounded-bl-full">
-                </div>
-
-                <!-- Icon -->
-                <div
-                    class="w-14 h-14 bg-gradient-to-br from-[#ff6b4a] to-orange-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                    </svg>
-                </div>
-
-                <h3 class="font-bold text-2xl mb-4 text-gray-800">
-                    Web Development
+                <h3 class="text-2xl font-bold mb-3 text-orange-500">
+                    Dedication 1
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Building responsive, fast, and scalable web applications using
-                    modern technologies like React, Node.js, and Express with clean
-                    UI and optimized performance.
+
+                <p class="text-gray-700 leading-relaxed">
+                    This portfolio is dedicated to my passion for web development and continuous
+                    learning. It reflects my journey as a MERN stack developer, showcasing the
+                    skills, projects, and problem-solving mindset developed through real-world
+                    practice.
                 </p>
             </div>
 
-            <!-- Card 2 - E-commerce Solutions -->
-            <div class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200
-                       shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2
-                       hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
-                <!-- Decorative Element -->
-                <div
-                    class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-[#ff6b4a]/10 rounded-bl-full">
-                </div>
+            <!-- Card 2 -->
+            <div
+                class="relative p-7 rounded-3xl bg-indigo-50 border border-indigo-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-                <!-- Icon -->
-                <div
-                    class="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                        </path>
-                    </svg>
-                </div>
+                <span class="absolute top-4 right-4 text-sm font-semibold text-indigo-500">
+                    Support
+                </span>
 
-                <h3 class="font-bold text-2xl mb-4 text-gray-800">
-                    E-commerce Solutions
+                <h3 class="text-2xl font-bold mb-3 text-indigo-500">
+                    Dedication 2
                 </h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Developing secure and scalable e-commerce platforms with product
-                    management, authentication, payment integration, and admin dashboards
-                    using the MERN stack.
+
+                <p class="text-gray-700 leading-relaxed">
+                    I dedicate this portfolio to my family, mentors, and the developer community
+                    who inspired and supported me throughout my journey. Their guidance and
+                    motivation helped me grow and build meaningful web applications.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="relative p-7 rounded-3xl bg-emerald-50 border border-emerald-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                <span class="absolute top-4 right-4 text-sm font-semibold text-emerald-500">
+                    Growth
+                </span>
+
+                <h3 class="text-2xl font-bold mb-3 text-emerald-500">
+                    Dedication 3
+                </h3>
+
+                <p class="text-gray-700 leading-relaxed">
+                    This portfolio is dedicated to innovation, creativity, and clean code. It
+                    represents my commitment to building scalable, user-focused MERN stack
+                    applications and continuously improving as a full-stack developer.
                 </p>
             </div>
 
         </div>
     </div>
-</div>
 
-<!-- Stats Section -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-10">
-    <div
-        class="flex flex-col md:flex-row justify-between items-center gap-6 p-8 md:p-20 bg-[#ff8c21] border-4 border-[#ff8c21] shadow-lg hover:bg-red-500 transition duration-300">
-        <!-- Stat 1 -->
-        <div class="text-center flex-1">
-            <h3 class="font-bold text-3xl md:text-4xl mb-1 text-gray-800">32k</h3>
-            <p class="text-gray-600">Web Designer</p>
+
+    <div class="container mx-auto my-20 px-4" id="about">
+        <div class="lg:flex gap-20 items-center">
+            <!-- Images -->
+            <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-10">
+                <div class="relative inline-block">
+                    <!-- Main large image -->
+                    <img class="w-[350px] md:w-[450px] lg:w-[550px] h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-3xl"
+                        src="Assetes/sakib1.jpg" alt="loading">
+
+                    <!-- Small overlapping image at bottom left -->
+                    <img class="absolute bottom-[-60px] md:bottom-[-80px] left-[-30px] md:left-[-50px] w-[180px] md:w-[240px] lg:w-[280px] h-[240px] md:h-[300px] lg:h-[360px] object-cover rounded-2xl shadow-2xl border-4 md:border-6 border-white"
+                        src="Assetes/sakib3.jpeg" alt="loading">
+
+                    <!-- Decorative Side Images -->
+                    <!-- XD Icon - left side middle -->
+                    <img class="absolute top-[140px] md:top-[180px] left-[-20px] md:left-[-30px] w-[70px] md:w-[85px] lg:w-[95px]"
+                        src="Assetes/side photo.png" alt="XD">
+
+                    <!-- PS Icon - bottom right -->
+                    <img class="absolute bottom-[-30px] md:bottom-[-40px] right-[90px] md:right-[80px] lg:right-[100px] w-[70px] md:w-[85px] lg:w-[95px]"
+                        src="Assetes/side photo 2.png" alt="PS">
+
+                    <!-- Figma Icon - top right corner -->
+                    <img class="absolute top-[-25px] md:top-[-30px] right-[-25px] md:right-[-35px] w-[65px] md:w-[80px] lg:w-[90px]"
+                        src="Assetes/side photo 3.png" alt="Figma">
+                </div>
+            </div>
+            <!-- Text Part -->
+            <div class="lg:w-1/2 mt-32 lg:mt-0">
+                <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold text-sm md:text-base">About Me</p>
+                <h1 class="text-[28px] md:text-[40px] font-bold py-5 leading-tight">World Professional Web Developer
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base font-sans leading-relaxed">
+                    I am a passionate and experienced web developer with expertise in creating
+                    modern, responsive, and user-friendly websites. My focus is on delivering
+                    high-quality code, seamless user experiences, and innovative solutions
+                    that help businesses grow in the digital space.
+                </p>
+
+                <!-- Personal Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-8 md:mt-10">
+                    <div class="space-y-5">
+                        <div>
+                            <h3 class="font-bold text-black">Name</h3>
+                            <p class="text-gray-600">Sakib</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-black">Email</h3>
+                            <p class="text-gray-600">sakib15-2223@diu.edu.bd</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-black">Phone</h3>
+                            <p class="text-gray-600">01706079313</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div>
+                            <h3 class="font-bold text-black">Birthday</h3>
+                            <p class="text-gray-600">1999</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-black">Education</h3>
+                            <p class="text-gray-600">Computer Science</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-black">Address</h3>
+                            <p class="text-gray-600">Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download CV Button -->
+                <div class="mt-8">
+                    <a href="Assetes/MD_Sakib_Chowdhury_CV.docx" download
+                        class="inline-block bg-[#ffb224] px-7 py-3 rounded-lg text-white font-semibold hover:bg-[#ff6b4a] transition duration-300">
+                        Download CV
+                    </a>
+
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Divider -->
-        <!-- <div class="hidden md:block w-px h-12 bg-gray-300"></div> -->
 
-        <!-- Stat 2
+    <!-- Services Section -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-40 text-center" id="services">
+
+        <!-- Move slightly down -->
+        <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold mt-10">
+            What I Do
+        </p>
+
+        <h1 class="text-3xl md:text-4xl font-bold py-6">
+            My Services
+        </h1>
+
+        <!-- Colorful Text | 80% Width | No Background -->
+        <p class="w-[80%] mx-auto leading-relaxed text-center text-lg">
+
+            <!-- Line 1 -->
+            <span class="block text-indigo-600/90 font-medium">
+                I am a MERN Stack Developer specializing in building scalable full-stack web
+                applications using MongoDB, Express.js, React.js, and Node.js.
+            </span>
+
+            <!-- Line 2 -->
+            <span class="block text-emerald-600/90 font-medium mt-2">
+                I focus on creating secure, user-friendly solutions with clean code, RESTful APIs,
+                and modern UI design.
+            </span>
+
+            <!-- Line 3 -->
+            <span class="block text-rose-600/90 font-medium mt-2">
+                I enjoy solving real-world problems and continuously improving my skills through
+                hands-on projects.
+            </span>
+
+        </p>
+
+
+    </div>
+
+    <!-- Gap/Spacing -->
+    <div class="h-16"></div>
+
+    <!-- Service Cards Section with Attractive Design -->
+    <div class="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
+
+        <!-- Cards Wrapper -->
+        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- Card 1 - Web Development -->
+                <div class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200
+                       shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2
+                       hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
+                    <!-- Decorative Element -->
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#ff6b4a]/10 to-purple-100 rounded-bl-full">
+                    </div>
+
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-[#ff6b4a] to-orange-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+
+                    <h3 class="font-bold text-2xl mb-4 text-gray-800">
+                        Web Development
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Building responsive, fast, and scalable web applications using
+                        modern technologies like React, Node.js, and Express with clean
+                        UI and optimized performance.
+                    </p>
+                </div>
+
+                <!-- Card 2 - E-commerce Solutions -->
+                <div class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200
+                       shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2
+                       hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
+                    <!-- Decorative Element -->
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-[#ff6b4a]/10 rounded-bl-full">
+                    </div>
+
+                    <!-- Icon -->
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <h3 class="font-bold text-2xl mb-4 text-gray-800">
+                        E-commerce Solutions
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Developing secure and scalable e-commerce platforms with product
+                        management, authentication, payment integration, and admin dashboards
+                        using the MERN stack.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-10">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-6 p-8 md:p-20 bg-[#ff8c21] border-4 border-[#ff8c21] shadow-lg hover:bg-red-500 transition duration-300">
+            <!-- Stat 1 -->
             <div class="text-center flex-1">
-                <h3 class="font-bold text-3xl md:text-4xl mb-2 text-white-800">12k</h3>
-                <p class="text-gray-600">Graphic Designer</p>
-            </div> -->
-
-        <!-- Divider -->
-        <!-- <div class="hidden md:block w-px h-12 bg-gray-300"></div> -->
-
-        <!-- Stat 3 -->
-        <!-- <div class="text-center flex-1">
-                <h3 class="font-bold text-3xl md:text-4xl mb-1 text-gray-800">4200</h3>
-                <p class="text-gray-600">Coffee Taken</p>
-            </div> -->
-    </div>
-</div>
-
-<!-- Skill Hub -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
-    <div class="flex flex-col lg:flex-row gap-10 items-center">
-        <!-- Image Section -->
-        <div class="w-full lg:w-5/12">
-            <img class="shadow-lg w-full h-80 md:h-96 lg:h-[450px] object-cover rounded-lg" src="/Assetes/s5.png"
-                alt="Skill Hub">
+                <h3 class="font-bold text-3xl md:text-4xl mb-1 text-gray-800">32k</h3>
+                <p class="text-gray-600">Web Designer</p>
+            </div>
         </div>
+    </div>
 
-        <!-- Text Section -->
-        <div class="w-full lg:w-7/12">
-            <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Skills</p>
-            <h1 class="text-xl md:text-2xl font-bold py-5">
-                I Develop Skills Regularly to Keep Me Update
-            </h1>
-            <p class="text-gray-600 text-base leading-relaxed mb-6">
-                Most common methods for designing websites that work well on desktop are
-                responsive and adaptive design.
-            </p>
+    <!-- Skill Hub -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
+        <div class="flex flex-col lg:flex-row gap-10 items-center">
+            <!-- Image Section -->
+            <div class="w-full lg:w-5/12">
+                <img class="shadow-lg w-full h-80 md:h-96 lg:h-[450px] object-cover rounded-lg" src="/Assetes/s5.png"
+                    alt="Skill Hub">
+            </div>
 
-            <!-- Skills Progress Bars -->
-            <div class="space-y-4">
-                <!-- Figma -->
-                <div class="p-2 bg-white">
-                    <h3 class="font-bold text-lg md:text-xl mb-1">Figma</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 80%;"></div>
+            <!-- Text Section -->
+            <div class="w-full lg:w-7/12">
+                <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Skills</p>
+                <h1 class="text-xl md:text-2xl font-bold py-5">
+                    I Develop Skills Regularly to Keep Me Update
+                </h1>
+                <p class="text-gray-600 text-base leading-relaxed mb-6">
+                    Most common methods for designing websites that work well on desktop are
+                    responsive and adaptive design.
+                </p>
+
+                <!-- Skills Progress Bars -->
+                <div class="space-y-4">
+                    <!-- Figma -->
+                    <div class="p-2 bg-white">
+                        <h3 class="font-bold text-lg md:text-xl mb-1">Figma</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 80%;"></div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600 font-medium">80%</p>
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 font-medium">80%</p>
-                </div>
 
-                <!-- Adobe -->
-                <div class="p-2 bg-white">
-                    <h3 class="font-bold text-lg md:text-xl mb-2">Adobe</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 70%;"></div>
+                    <!-- Adobe -->
+                    <div class="p-2 bg-white">
+                        <h3 class="font-bold text-lg md:text-xl mb-2">Adobe</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 70%;"></div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600 font-medium">70%</p>
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 font-medium">70%</p>
-                </div>
 
-                <!-- Photoshop -->
-                <div class="p-2 bg-white">
-                    <h3 class="font-bold text-lg md:text-xl mb-2">Photoshop</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 90%;"></div>
+                    <!-- Photoshop -->
+                    <div class="p-2 bg-white">
+                        <h3 class="font-bold text-lg md:text-xl mb-2">Photoshop</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-[#ff6b4a] h-2 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600 font-medium">90%</p>
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 font-medium">90%</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Portfolio Filter Radios -->
-<input type="radio" name="portfolio" id="all" checked hidden>
-<input type="radio" name="portfolio" id="web" hidden>
-<input type="radio" name="portfolio" id="photo" hidden>
 
-<!-- Portfolio Section -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center">
-    <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Portfolio</p>
-    <h1 class="text-3xl md:text-4xl font-bold py-5">My Amazing Works</h1>
-    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Most common methods for designing websites that work well on desktop is responsive and adaptive design
-    </p>
+    <!-- Portfolio Filter Radios -->
+    <input type="radio" name="portfolio" id="all" checked hidden>
+    <input type="radio" name="portfolio" id="web" hidden>
+    <input type="radio" name="portfolio" id="photo" hidden>
 
- <ul class="flex flex-wrap justify-center gap-4 md:gap-8 font-bold py-10">
-    <li><label for="all" class="cursor-pointer text-gray-700 hover:text-blue-500">Show All</label></li>
-    <li><label for="web" class="cursor-pointer text-gray-700 hover:text-blue-500">Website</label></li>
-    <li><label for="photo" class="cursor-pointer text-gray-700 hover:text-blue-500">Photo</label></li>
-</ul>
+    <!-- Portfolio Section -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center" id="projects">
+        <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Portfolio</p>
+        <h1 class="text-3xl md:text-4xl font-bold py-5">My Amazing Works</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Most common methods for designing websites that work well on desktop is responsive and adaptive design
+        </p>
 
-</div>
+        <ul class="flex flex-wrap justify-center gap-4 md:gap-8 font-bold py-10">
+            <li><label for="all" class="cursor-pointer text-gray-700 hover:text-blue-500">Show All</label></li>
+            <li><label for="web" class="cursor-pointer text-gray-700 hover:text-blue-500">Website</label></li>
+            <li><label for="photo" class="cursor-pointer text-gray-700 hover:text-blue-500">Photo</label></li>
+        </ul>
 
-<!-- Portfolio Images Grid -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    </div>
 
-    <!-- Website -->
-    <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
-        src="Assetes/ps11.png">
+    <!-- Portfolio Images Grid -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
-        src="Assetes/ps2.png">
+            <!-- Website -->
+            <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
+                src="Assetes/ps11.png">
 
-    <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
-        src="Assetes/s51.png">
+            <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
+                src="Assetes/ps2.png">
 
-    <!-- Photo -->
-    <img class="portfolio photo shadow-lg w-full transition-transform duration-500 hover:scale-105"
-        src="Assetes/s3.png">
+            <img class="portfolio web shadow-lg w-full transition-transform duration-500 hover:scale-105"
+                src="Assetes/s51.png">
 
-    <img class="portfolio photo shadow-lg w-full transition-transform duration-500 hover:scale-105"
-        src="Assetes/s4.png">
+            <!-- Photo -->
+            <img class="portfolio photo shadow-lg w-full transition-transform duration-500 hover:scale-105"
+                src="Assetes/s3.png">
 
-</div>
+            <img class="portfolio photo shadow-lg w-full transition-transform duration-500 hover:scale-105"
+                src="Assetes/s4.png">
 
-</div>
-
-<!-- Provider Services -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center">
-    <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Service</p>
-    <h1 class="text-3xl md:text-4xl font-bold py-5">My Provider Services</h1>
-    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Most common methods for designing websites that work well on desktop is responsive and adaptive design
-    </p>
-</div>
-
-<!-- Service Cards -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-        <!-- Card 1 -->
-        <div
-            class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-
-            <!-- Always Visible Glow -->
-            <div
-                class="absolute inset-0 bg-gradient-to-br from-[#ffb224]/25 via-transparent to-purple-400/25">
-            </div>
-
-            <div
-                class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7e21] to-orange-500 shadow-lg mb-6">
-                <img class="w-12" src="Assetes/sa8.png" alt="">
-            </div>
-
-            <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
-                Unique Design
-            </h3>
-
-            <p class="relative z-10 text-gray-600 leading-relaxed">
-                Most common methods for designing websites that work well on desktop with
-                modern, creative, and user-focused layouts.
-            </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div
-            class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-
-            <div
-                class="absolute inset-0 bg-gradient-to-br from-purple-500/25 via-transparent to-indigo-400/25">
-            </div>
-
-            <div
-                class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-lg mb-6">
-                <img class="w-12" src="Assetes/sr1.png" alt="">
-            </div>
-
-            <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
-                Responsive
-            </h3>
-
-            <p class="relative z-10 text-gray-600 leading-relaxed">
-                Fully responsive designs that adapt perfectly across desktop, tablet,
-                and mobile devices for better user experience.
-            </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div
-            class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-
-            <div
-                class="absolute inset-0 bg-gradient-to-br from-green-400/25 via-transparent to-teal-400/25">
-            </div>
-
-            <div
-                class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-teal-500 shadow-lg mb-6">
-                <img class="w-12" src="Assetes/ud.png" alt="">
-            </div>
-
-            <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
-                24 Hours Service
-            </h3>
-
-            <p class="relative z-10 text-gray-600 leading-relaxed">
-                Round-the-clock support to ensure your website runs smoothly with quick
-                fixes, updates, and professional assistance anytime.
-            </p>
         </div>
 
     </div>
-</div>
 
-
-<!-- Testimonials
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center">
-    <h1 class="text-3xl md:text-4xl font-bold py-5">What Clients Say</h1>
-    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur. Nunc luctus malesuada massa at donec diam. Felis nec sit a in
-        sodales.
-    </p>
-</div>
-
-<! Testimonial Section -->
-<!-- <div class="container mx-auto px-4 md:px-6 lg:px-8 my-10">
-    <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
-        <!-- Left Image -->
-        <!-- <div class="hidden lg:block">
-            <img class="w-32 h-auto object-contain" src="Assetes/test-bg-lef.png" alt="Decoration">
-        </div> -->
-
-        <!-- Center Testimonial -->
-        <!-- <div class="flex flex-col items-center text-center max-w-md">
-            <img class="w-48 h-48 object-contain transition-transform duration-500 hover:scale-105 rounded-lg"
-                src="Assetes/test1.png" alt="Testimonial">
-            <div class="flex justify-center mt-4 text-yellow-400 text-xl">
-                ★★★★☆
-            </div>
-            <p class="mt-2 text-gray-700 font-medium">
-                This is a description under the first image. Highlighting key points about the product/service.
-            </p>
-        </div> -->
-
-        <!-- Right Image -->
-        <!-- <div class="hidden lg:block">
-            <img class="w-32 h-auto object-contain rounded-lg" src="Assetes/test-bg-right.png" alt="Decoration">
-        </div>
+    <!-- Provider Services -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center">
+        <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Service</p>
+        <h1 class="text-3xl md:text-4xl font-bold py-5">My Provider Services</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Most common methods for designing websites that work well on desktop is responsive and adaptive design
+        </p>
     </div>
-</div>  -->
 
-<!-- Latest News -->
-<!-- <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20 text-center">
-    <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Latest News</p>
-    <h1 class="text-3xl md:text-4xl font-bold py-5">Check Out My Recent App</h1>
-    <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Most common methods for designing websites that work well on desktop is responsive and adaptive design
-    </p> -->
-<!-- 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10"> -->
-        <!-- News 1 -->
-        <!-- <div>
-            <img class="w-full h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
-                src="Assetes/new.jpg" alt="News 1">
-            <h3 class="mt-4 text-xl font-semibold text-gray-800">Image One</h3>
-            <p class="text-gray-600 mt-2">This is a short description under the first image.</p>
-        </div> -->
+    <!-- Service Cards -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        <!-- News 2 -->
-        <!-- <div>
-            <img class="w-full h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
-                src="Assetes/new2.jpg" alt="News 2">
-            <h3 class="mt-4 text-xl font-semibold text-gray-800">Image Two</h3>
-            <p class="text-gray-600 mt-2">This is a short description under the second image.</p>
-        </div> -->
+            <!-- Card 1 -->
+            <div
+                class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
 
-        <!-- News 3 -->
-        <!-- <div>
-            <img class="w-full h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
-                src="Assetes/new3.jpg" alt="News 3">
-            <h3 class="mt-4 text-xl font-semibold text-gray-800">Image Three</h3>
-            <p class="text-gray-600 mt-2">This is a short description under the third image.</p>
-        </div>
-    </div>
-</div> --> 
+                <!-- Always Visible Glow -->
+                <div class="absolute inset-0 bg-gradient-to-br from-[#ffb224]/25 via-transparent to-purple-400/25">
+                </div>
 
-<!-- Contact Form -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
-    <div class="bg-[#ff8c21] shadow-lg text-white p-6 md:p-10 w-full">
-        <h2 class="text-2xl font-bold text-center mb-6">Login / Contact</h2>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Email -->
-            <div class="flex flex-col">
-                <label class="text-white mb-2">Email</label>
                 <div
-                    class="flex items-center border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-[#ff6b4a]">
-                    <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 12H8m0 0l4-4m-4 4l4 4m0-4h8"></path>
-                    </svg>
-                    <input type="email" placeholder="Enter your email"
-                        class="w-full px-2 py-2 text-black focus:outline-none" />
+                    class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7e21] to-orange-500 shadow-lg mb-6">
+                    <img class="w-12" src="Assetes/sa8.png" alt="">
                 </div>
+
+                <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
+                    Unique Design
+                </h3>
+
+                <p class="relative z-10 text-gray-600 leading-relaxed">
+                    Most common methods for designing websites that work well on desktop with
+                    modern, creative, and user-focused layouts.
+                </p>
             </div>
 
-            <!-- Password -->
-            <div class="flex flex-col">
-                <label class="text-white mb-2">Password</label>
+            <!-- Card 2 -->
+            <div
+                class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
+
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/25 via-transparent to-indigo-400/25">
+                </div>
+
                 <div
-                    class="flex items-center border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-[#ff6b4a]">
-                    <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3v4h6v-4z"></path>
-                    </svg>
-                    <input type="password" placeholder="Enter your password"
-                        class="w-full px-2 py-2 text-black focus:outline-none" />
+                    class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-lg mb-6">
+                    <img class="w-12" src="Assetes/sr1.png" alt="">
                 </div>
+
+                <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
+                    Responsive
+                </h3>
+
+                <p class="relative z-10 text-gray-600 leading-relaxed">
+                    Fully responsive designs that adapt perfectly across desktop, tablet,
+                    and mobile devices for better user experience.
+                </p>
             </div>
 
-            <!-- Message -->
-            <div class="md:col-span-2 flex flex-col">
-                <label class="text-white mb-2">Message</label>
-                <textarea placeholder="Write your message" rows="4"
-                    class="w-full px-4 py-2 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-[#ff6b4a]"></textarea>
+            <!-- Card 3 -->
+            <div
+                class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
+
+                <div class="absolute inset-0 bg-gradient-to-br from-green-400/25 via-transparent to-teal-400/25">
+                </div>
+
+                <div
+                    class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-teal-500 shadow-lg mb-6">
+                    <img class="w-12" src="Assetes/ud.png" alt="">
+                </div>
+
+                <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">
+                    24 Hours Service
+                </h3>
+
+                <p class="relative z-10 text-gray-600 leading-relaxed">
+                    Round-the-clock support to ensure your website runs smoothly with quick
+                    fixes, updates, and professional assistance anytime.
+                </p>
             </div>
 
-            <!-- Submit Button -->
-            <div class="md:col-span-2">
-                <button type="submit"
-                    class="w-full bg-white text-[#ff8c21] font-semibold py-2 rounded-lg hover:bg-gray-100 transition duration-300">
-                    Submit
-                </button>
-            </div>
-        </form>
+        </div>
+    </div>
 
-        <!-- Contact Info -->
-        <div class="mt-8 flex flex-col md:flex-row justify-between gap-4 text-left">
-            <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17.657 16.657L13.414 12.414"></path>
-                </svg>
-                <span>Dhaka, Bangladesh</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2M3 9h2"></path>
-                </svg>
-                <span>01706079313</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01"></path>
-                </svg>
-                <span>sakib15-2223@diu.edu.bd</span>
+    <!-- Contact Form -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20" id="contact">
+        <div class="bg-[#ff8c21] shadow-lg text-white p-6 md:p-10 w-full rounded-2xl">
+            <h2 class="text-2xl font-bold text-center mb-6">Login / Contact</h2>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Email -->
+                <div class="flex flex-col">
+                    <label class="text-white mb-2">Email</label>
+                    <div
+                        class="flex items-center border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-[#ff6b4a]">
+                        <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 12H8m0 0l4-4m-4 4l4 4m0-4h8"></path>
+                        </svg>
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-2 py-2 text-black focus:outline-none" />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="flex flex-col">
+                    <label class="text-white mb-2">Password</label>
+                    <div
+                        class="flex items-center border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-[#ff6b4a]">
+                        <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3v4h6v-4z"></path>
+                        </svg>
+                        <input type="password" placeholder="Enter your password"
+                            class="w-full px-2 py-2 text-black focus:outline-none" />
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="md:col-span-2 flex flex-col">
+                    <label class="text-white mb-2">Message</label>
+                    <textarea placeholder="Write your message" rows="4"
+                        class="w-full px-4 py-2 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-[#ff6b4a]"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="md:col-span-2">
+                    <button type="submit"
+                        class="w-full bg-white text-[#ff8c21] font-semibold py-2 rounded-lg hover:bg-gray-100 transition duration-300">
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="mt-8 flex flex-col md:flex-row justify-between gap-4 text-left">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 12.414"></path>
+                    </svg>
+                    <span>Dhaka, Bangladesh</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2M3 9h2"></path>
+                    </svg>
+                    <span>01706079313</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12h.01"></path>
+                    </svg>
+                    <span>sakib15-2223@diu.edu.bd</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Map Section -->
-<div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
-    <h2 class="text-2xl font-bold text-center mb-6">Dhaka City Map</h2>
-    <div class="w-full h-64 md:h-96 rounded-2xl shadow-lg overflow-hidden">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902191327913!2d90.39146361498138!3d23.750885594617695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b04b4b94e9%3A0x9f8a6a48f7c3a41b!2sDhaka!5e0!3m2!1sen!2sbd!4v1693802522221!5m2!1sen!2sbd"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
+    <!-- Map Section -->
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 my-20">
+        <h2 class="text-2xl font-bold text-center mb-6">Dhaka City Map</h2>
+        <div class="w-full h-64 md:h-96 rounded-2xl shadow-lg overflow-hidden">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902191327913!2d90.39146361498138!3d23.750885594617695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b04b4b94e9%3A0x9f8a6a48f7c3a41b!2sDhaka!5e0!3m2!1sen!2sbd!4v1693802522221!5m2!1sen!2sbd"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
     </div>
-</div>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
-    }
-</script>
+    <script>
+        // Download CV Function - Forces download instead of opening in browser
+        function downloadCV() {
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = 'MD_Sakib_Chowdhury_CV.docx';
+            link.download = 'MD_Sakib_Chowdhury_CV.docx';
+
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
 
 </body>
 
