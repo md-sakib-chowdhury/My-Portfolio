@@ -6,34 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Sakib Chowdhury - MERN Stack Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
     <style>
-        .badge {
+        :root {
+            --blue: #2563eb;
+            --blue-light: #dbeafe;
+            --blue-mid: #93c5fd;
+            --teal: #0d9488;
+            --teal-light: #ccfbf1;
+            --coral: #dc4a21;
+            --coral-light: #fee2d5;
+            --purple: #7c3aed;
+            --purple-light: #ede9fe;
+            --amber: #d97706;
+            --amber-light: #fef3c7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* ── NAVBAR ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+            margin: 0 2rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+
+        /* ── SECTION LABEL ── */
+        .label {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.12em;
+            font-weight: 600;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: #185FA5;
-            background: #E6F1FB;
-            border: 0.5px solid #B5D4F4;
-            padding: 6px 14px;
+            color: var(--blue);
+            background: var(--blue-light);
+            border: 1px solid var(--blue-mid);
+            padding: 5px 14px;
             border-radius: 100px;
-            margin-bottom: 1.2rem;
         }
 
-        .badge-dot {
+        .label-dot {
             width: 6px;
             height: 6px;
-            background: #378ADD;
+            background: var(--blue);
             border-radius: 50%;
-            animation: pulse-dot 2s infinite;
+            animation: blink 2s infinite;
         }
 
-        @keyframes pulse-dot {
+        @keyframes blink {
 
             0%,
             100% {
@@ -42,707 +81,818 @@
             }
 
             50% {
-                opacity: 0.5;
-                transform: scale(0.75);
+                opacity: 0.4;
+                transform: scale(0.7);
             }
         }
 
-        .services-title {
+        /* ── DISPLAY HEADING ── */
+        .display {
             font-family: 'Syne', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 800;
-            color: #1a1a2e;
-            margin: 0 0 1rem;
-            line-height: 1.1;
+            line-height: 1.08;
+            color: #0f172a;
         }
 
-        .services-title span {
-            color: #378ADD;
+        /* ── SERVICE HERO (big cards) ── */
+        .svc-section {
+            padding: 6rem 2rem;
+            background: #0f172a;
             position: relative;
+            overflow: hidden;
         }
 
-        .services-title span::after {
+        .svc-section::before {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #378ADD, #85B7EB);
-            border-radius: 2px;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 10% 20%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 90% 80%, rgba(124, 58, 237, 0.14) 0%, transparent 60%);
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .svc-card {
-            background: #fff;
-            border: 0.5px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 1.4rem 1.2rem;
-            text-align: left;
+            border-radius: 20px;
+            padding: 2.2rem 2rem;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.2s, transform 0.2s;
-        }
-
-        .svc-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            border-radius: 12px 12px 0 0;
+            cursor: default;
+            transition: transform 0.3s cubic-bezier(.34, 1.56, .64, 1), box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .svc-card:hover {
-            border-color: #aaa;
-            transform: translateY(-3px);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4);
         }
 
-        .svc-card.blue::before {
-            background: #378ADD;
+        .svc-card.c-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #2563eb 100%);
         }
 
-        .svc-card.teal::before {
-            background: #1D9E75;
+        .svc-card.c-teal {
+            background: linear-gradient(135deg, #134e4a 0%, #0f766e 60%, #14b8a6 100%);
         }
 
-        .svc-card.coral::before {
-            background: #D85A30;
+        .svc-card.c-coral {
+            background: linear-gradient(135deg, #7c1d0a 0%, #c2410c 60%, #ea580c 100%);
         }
 
-        .svc-card.purple::before {
-            background: #7F77DD;
+        .svc-card.c-purple {
+            background: linear-gradient(135deg, #3b0764 0%, #6d28d9 60%, #8b5cf6 100%);
         }
 
-        .svc-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+        .svc-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .svc-icon-wrap {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 1.4rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.3s;
         }
 
-        .svc-card.blue .svc-icon {
-            background: #E6F1FB;
-        }
-
-        .svc-card.teal .svc-icon {
-            background: #E1F5EE;
-        }
-
-        .svc-card.coral .svc-icon {
-            background: #FAECE7;
-        }
-
-        .svc-card.purple .svc-icon {
-            background: #EEEDFE;
+        .svc-card:hover .svc-icon-wrap {
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .svc-card-title {
             font-family: 'Syne', sans-serif;
-            font-size: 14px;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #1a1a2e;
-            margin: 0 0 6px;
+            color: #fff;
+            margin: 0 0 0.7rem;
         }
 
         .svc-card-desc {
-            font-size: 12.5px;
-            color: #666;
-            line-height: 1.6;
-            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0 0 1.4rem;
         }
 
-        .stack-chips {
+        .svc-chips {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
+            gap: 7px;
         }
 
-        .chip {
-            font-size: 10px;
-            padding: 3px 8px;
+        .svc-chip {
+            font-size: 10.5px;
+            font-weight: 600;
+            padding: 4px 11px;
             border-radius: 100px;
-            font-weight: 500;
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.04em;
+            transition: background 0.2s;
         }
 
-        .svc-card.blue .chip {
-            background: #E6F1FB;
-            color: #185FA5;
-            border: 0.5px solid #B5D4F4;
+        .svc-card:hover .svc-chip {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .svc-card.teal .chip {
-            background: #E1F5EE;
-            color: #0F6E56;
-            border: 0.5px solid #9FE1CB;
+        .svc-number {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.8rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.06);
+            line-height: 1;
+            user-select: none;
         }
 
-        .svc-card.coral .chip {
-            background: #FAECE7;
-            color: #993C1D;
-            border: 0.5px solid #F5C4B3;
+        /* ── PROVIDER CARDS ── */
+        .provider-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
 
-        .svc-card.purple .chip {
-            background: #EEEDFE;
-            color: #534AB7;
-            border: 0.5px solid #CECBF6;
+        .provider-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
         }
 
-        .svc-divider {
+        .provider-card.p1:hover {
+            border-color: #fb923c;
+        }
+
+        .provider-card.p2:hover {
+            border-color: #818cf8;
+        }
+
+        .provider-card.p3:hover {
+            border-color: #34d399;
+        }
+
+        .provider-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            max-width: 320px;
-            margin: 2.5rem auto 0;
+            justify-content: center;
+            margin-bottom: 1.3rem;
         }
 
-        .svc-divider-line {
-            flex: 1;
-            height: 0.5px;
-            background: #ddd;
+        /* ── SKILL BARS ── */
+        .skill-bar-wrap {
+            margin-bottom: 1.4rem;
         }
 
-        /* Portfolio Filter */
+        .skill-bar-track {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #2563eb, #60a5fa);
+            transition: width 1s ease;
+        }
+
+        /* ── PORTFOLIO FILTER ── */
         .portfolio {
             display: block;
         }
 
-        #web:checked~.container .photo {
+        #web:checked~* .photo {
             display: none;
         }
 
-        #photo:checked~.container .web {
+        #photo:checked~* .web {
             display: none;
+        }
+
+        /* ── CONTACT ── */
+        .contact-wrap {
+            background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #4338ca 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-wrap::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
         }
     </style>
 </head>
 
-<body class="overflow-x-hidden bg-gray-50">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-md mx-16">
-        <div class="mx-2 px-4 md:px-6 lg:px-4 py-4">
-            <div class="flex justify-between items-center">
-                <img src="/Assetes/sakib 6.png" alt="logo" class="h-14 md:h-16">
+<body>
 
-                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+    <!-- ════════════ NAVBAR ════════════ -->
+    <nav>
+        <div
+            style="max-width:1200px; margin:0 auto; padding:1rem 1.5rem; display:flex; justify-content:space-between; align-items:center;">
+            <img src="/Assetes/sakib 6.png" alt="logo" style="height:52px;">
 
-                <ul id="menu"
-                    class="hidden md:flex flex-row gap-8 lg:gap-10 font-semibold absolute left-1/2 transform -translate-x-1/2">
-                    <li><a href="#home"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Home</a></li>
-                    <li><a href="#about"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-300">About</a></li>
-                    <li><a href="#services"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Services</a></li>
-                    <li><a href="#contact"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Contact</a></li>
-                    <li><a href="#projects"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-300">Projects</a></li>
-                </ul>
+            <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                <svg style="width:24px;height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
 
-                <a href="Assetes/Md sakib Chowdhury New Cv.pdf" download="MD_Sakib_Chowdhury_CV.docx"
-                    class="hidden md:block bg-blue-600 px-6 py-2.5 rounded-lg text-white font-semibold hover:bg-blue-700 transition-all duration-300">
-                    Download Resume
-                </a>
-            </div>
+            <ul id="menu" class="hidden md:flex"
+                style="list-style:none; display:flex; gap:2.5rem; font-weight:600; font-size:0.9rem; margin:0; padding:0;">
+                <li><a href="#home" style="color:#374151; text-decoration:none;"
+                        onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#374151'">Home</a></li>
+                <li><a href="#about" style="color:#374151; text-decoration:none;"
+                        onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#374151'">About</a></li>
+                <li><a href="#services" style="color:#374151; text-decoration:none;"
+                        onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#374151'">Services</a>
+                </li>
+                <li><a href="#projects" style="color:#374151; text-decoration:none;"
+                        onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#374151'">Projects</a>
+                </li>
+                <li><a href="#contact" style="color:#374151; text-decoration:none;"
+                        onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#374151'">Contact</a>
+                </li>
+            </ul>
+
+            <a href="Assetes/Md sakib Chowdhury New Cv.pdf" download
+                style="background:#2563eb; color:#fff; padding:0.6rem 1.4rem; border-radius:10px; font-weight:600; text-decoration:none; font-size:0.875rem; display:none;"
+                class="md:block" onmouseover="this.style.background='#1d4ed8'"
+                onmouseout="this.style.background='#2563eb'">
+                Download Resume
+            </a>
+            <a href="Assetes/Md sakib Chowdhury New Cv.pdf" download
+                style="background:#2563eb; color:#fff; padding:0.6rem 1.4rem; border-radius:10px; font-weight:600; text-decoration:none; font-size:0.875rem;"
+                onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'"
+                class="hidden md:inline-block">
+                Download Resume
+            </a>
         </div>
     </nav>
 
-    <div class="pt-20 md:pt-24"></div>
+    <div style="height:80px;"></div>
 
-    <!-- Banner -->
-    <div class="mx-8 px-4 md:px-6 lg:px-8 my-10" id="home">
+    <!-- ════════════ BANNER ════════════ -->
+    <div style="margin:2rem; padding:0.5rem;" id="home">
         <div
-            class="flex flex-col lg:flex-row justify-between items-center gap-8 p-6 md:p-10 bg-white rounded-2xl shadow-md">
-            <div class="flex-1 space-y-6">
-                <p class="text-blue-600 uppercase tracking-wider font-medium text-sm">Full Stack Developer</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">MD Sakib Chowdhury
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-700">MERN Stack Developer</p>
-                <p class="text-lg text-gray-600 leading-relaxed max-w-2xl">
+            style="background:#fff; border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.07); padding:3rem 2.5rem; display:flex; flex-wrap:wrap; align-items:center; gap:3rem;">
+            <div style="flex:1; min-width:280px;">
+                <span class="label"><span class="label-dot"></span>Full Stack Developer</span>
+                <h1 class="display" style="font-size:clamp(2.2rem,5vw,3.8rem); margin:1.2rem 0 0.5rem;">MD
+                    Sakib<br>Chowdhury</h1>
+                <p style="font-size:1.25rem; color:#2563eb; font-weight:600; margin:0 0 1rem;">MERN Stack Developer</p>
+                <p style="color:#64748b; line-height:1.7; max-width:500px; margin:0 0 2rem;">
                     Building scalable web applications with modern technologies. Specialized in MongoDB, Express.js,
                     React.js, and Node.js.
                 </p>
-                <div class="flex gap-4 pt-4">
+                <div style="display:flex; gap:1rem; flex-wrap:wrap;">
                     <a href="#contact"
-                        class="bg-blue-600 px-8 py-3 rounded-lg text-white font-medium hover:bg-blue-700 transition shadow-sm">Get
+                        style="background:#2563eb; color:#fff; padding:0.8rem 2rem; border-radius:12px; font-weight:600; text-decoration:none; transition:background 0.2s;"
+                        onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Get
                         In Touch</a>
                     <a href="Assetes/Md sakib Chowdhury New Cv.pdf" download
-                        class="bg-blue-600 px-8 py-3 rounded-lg text-white font-medium hover:bg-blue-700 transition shadow-sm">Download
-                        Resume</a>
+                        style="background:#f1f5f9; color:#0f172a; padding:0.8rem 2rem; border-radius:12px; font-weight:600; text-decoration:none; border:1px solid #e2e8f0;">
+                        Download CV
+                    </a>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                <div class="relative group">
-                    <div class="relative rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
+            <div style="display:flex; justify-content:center; flex:0 0 auto;">
+                <div style="position:relative;">
+                    <div
+                        style="width:300px; height:300px; border-radius:50%; overflow:hidden; border:5px solid #2563eb; box-shadow:0 0 0 12px #dbeafe;">
                         <img src="/Assetes/sakibp2.png"
-                            class="w-72 h-72 md:w-96 md:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
-                            alt="Profile">
+                            style="width:100%; height:100%; object-fit:cover; transition:transform 0.5s;"
+                            onmouseover="this.style.transform='scale(1.05)'"
+                            onmouseout="this.style.transform='scale(1)'">
                     </div>
                     <div
-                        class="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg">
-                        <span class="text-sm">Available for Work 🚀</span>
+                        style="position:absolute; bottom:-16px; right:-16px; background:#2563eb; color:#fff; padding:0.7rem 1.3rem; border-radius:12px; font-size:0.85rem; font-weight:600; box-shadow:0 8px 24px rgba(37,99,235,0.4);">
+                        Available for Work 🚀
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- About -->
-    <div class="mx-8 my-20 px-4" id="about">
-        <div class="lg:flex gap-20 items-center">
-            <div class="relative w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-10">
-                <div class="relative inline-block">
-                    <img class="w-[350px] md:w-[450px] lg:w-[550px] h-[400px] md:h-[500px] lg:h-[700px] object-cover rounded-2xl shadow-lg"
-                        src="Assetes/sakib1.jpg" alt="loading">
-                    <img class="absolute bottom-[-60px] md:bottom-[-140px] left-[-30px] md:left-[-50px] w-[180px] md:w-[240px] lg:w-[280px] h-[240px] md:h-[300px] lg:h-[360px] object-cover rounded-xl shadow-xl border-4 md:border-6 border-white"
-                        src="Assetes/my formal pic.png" alt="loading">
-                    <img class="absolute top-[140px] md:top-[180px] left-[-20px] md:left-[-30px] w-[70px] md:w-[85px] lg:w-[95px]"
-                        src="Assetes/side photo.png" alt="XD">
-                    <img class="absolute bottom-[-30px] md:bottom-[-40px] right-[90px] md:right-[80px] lg:right-[100px] w-[70px] md:w-[85px] lg:w-[95px]"
-                        src="Assetes/side photo 2.png" alt="PS">
-                    <img class="absolute top-[-25px] md:top-[-30px] right-[-25px] md:right-[-35px] w-[65px] md:w-[80px] lg:w-[90px]"
-                        src="Assetes/side photo 3.png" alt="Figma">
+    <!-- ════════════ ABOUT ════════════ -->
+    <div style="margin:4rem 2rem;" id="about">
+        <div style="display:flex; flex-wrap:wrap; gap:5rem; align-items:center;">
+            <div style="position:relative; flex:0 0 auto;">
+                <div style="position:relative; display:inline-block;">
+                    <img style="width:clamp(300px,40vw,480px); height:580px; object-fit:cover; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.12);"
+                        src="Assetes/sakib1.jpg" alt="">
+                    <img style="position:absolute; bottom:-100px; left:-40px; width:210px; height:270px; object-fit:cover; border-radius:16px; box-shadow:0 16px 48px rgba(0,0,0,0.2); border:5px solid #fff;"
+                        src="Assetes/my formal pic.png" alt="">
+                    <img style="position:absolute; top:160px; left:-25px; width:80px;" src="Assetes/side photo.png"
+                        alt="">
+                    <img style="position:absolute; bottom:-20px; right:80px; width:80px;" src="Assetes/side photo 2.png"
+                        alt="">
+                    <img style="position:absolute; top:-20px; right:-30px; width:75px;" src="Assetes/side photo 3.png"
+                        alt="">
                 </div>
             </div>
-            <div class="lg:w-1/2 mt-32 lg:mt-0">
-                <p class="text-blue-600 uppercase tracking-wide font-semibold text-sm md:text-base">About Me</p>
-                <h1 class="text-[28px] md:text-[40px] font-bold py-5 leading-tight text-gray-800">World Professional Web
-                    Developer</h1>
-                <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+            <div style="flex:1; min-width:280px; margin-top:6rem;">
+                <span class="label"><span class="label-dot"></span>About Me</span>
+                <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem); margin:1.2rem 0 1rem;">World Class
+                    Web<br>Developer</h2>
+                <p style="color:#64748b; line-height:1.8; margin:0 0 2rem;">
                     I am a passionate and experienced web developer with expertise in creating modern, responsive, and
                     user-friendly websites. My focus is on delivering high-quality code, seamless user experiences, and
                     innovative solutions that help businesses grow in the digital space.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-8 md:mt-10">
-                    <div class="space-y-5">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Name</h3>
-                            <p class="text-gray-600">Sakib</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Email</h3>
-                            <p class="text-gray-600">sakib15-2223@diu.edu.bd</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Phone</h3>
-                            <p class="text-gray-600">01706079313</p>
-                        </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:2rem;">
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Name</p>
+                        <p style="color:#64748b; margin:0;">Sakib</p>
                     </div>
-                    <div class="space-y-5">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Birthday</h3>
-                            <p class="text-gray-600">1999</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Education</h3>
-                            <p class="text-gray-600">Computer Science</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Address</h3>
-                            <p class="text-gray-600">Bangladesh</p>
-                        </div>
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Birthday</p>
+                        <p style="color:#64748b; margin:0;">1999</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Email</p>
+                        <p style="color:#64748b; margin:0; font-size:0.85rem;">sakib15-2223@diu.edu.bd</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Education</p>
+                        <p style="color:#64748b; margin:0;">Computer Science</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Phone</p>
+                        <p style="color:#64748b; margin:0;">01706079313</p>
+                    </div>
+                    <div>
+                        <p style="font-weight:600; color:#0f172a; margin:0 0 4px;">Address</p>
+                        <p style="color:#64748b; margin:0;">Bangladesh</p>
                     </div>
                 </div>
-                <div class="mt-8">
-                    <a href="Assetes/MD_Sakib_Chowdhury_CV.docx" download
-                        class="inline-block bg-blue-600 px-7 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 transition duration-300">Download
-                        CV</a>
-                </div>
+                <a href="Assetes/MD_Sakib_Chowdhury_CV.docx" download
+                    style="background:#2563eb; color:#fff; padding:0.8rem 2rem; border-radius:12px; font-weight:600; text-decoration:none; display:inline-block;"
+                    onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">Download
+                    CV</a>
             </div>
         </div>
     </div>
 
-    <!-- ✅ NEW Services Section -->
-    <div class="mx-8 px-4 md:px-6 lg:px-8 my-20 text-center" id="services">
-        <div class="badge">
-            <span class="badge-dot"></span>
-            What I Do
-        </div>
-
-        <h2 class="services-title">My <span>Services</span></h2>
-
-        <p
-            style="font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.75; color: #555; max-width: 560px; margin: 0 auto 3rem;">
-            I build scalable, full-stack web apps using the MERN stack — with clean code,
-            secure APIs, and interfaces people actually enjoy using.
+    <!-- ════════════ SERVICES INTRO ════════════ -->
+    <div style="padding:5rem 2rem 2rem; text-align:center;" id="services">
+        <span class="label"><span class="label-dot"></span>What I Do</span>
+        <h2 class="display" style="font-size:clamp(2rem,5vw,3.2rem); margin:1.2rem 0 1rem;">
+            My <span style="color:#2563eb; position:relative;">Services<span
+                    style="position:absolute;left:0;bottom:-6px;width:100%;height:4px;background:linear-gradient(90deg,#2563eb,#93c5fd);border-radius:2px;"></span></span>
+        </h2>
+        <p style="color:#64748b; font-size:1rem; line-height:1.8; max-width:560px; margin:0 auto;">
+            I build scalable, full-stack web apps using the MERN stack — clean code, secure APIs, and interfaces people
+            actually enjoy using.
         </p>
+    </div>
 
-        <!-- 4 Mini Cards -->
-        <div
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 780px; margin: 0 auto;">
+    <!-- ════════════ BIG SERVICE CARDS ════════════ -->
+    <div class="svc-section" style="margin:2rem; border-radius:24px;">
+        <div class="svc-grid">
 
             <!-- Card 1 -->
-            <div class="svc-card blue">
-                <div class="svc-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#378ADD" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
+            <div class="svc-card c-blue fade-up delay-1">
+                <div class="svc-icon-wrap">
+                    <svg width="28" height="28" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="18" height="18" rx="2" />
                         <path d="M3 9h18M9 21V9" />
                     </svg>
                 </div>
                 <p class="svc-card-title">Frontend Development</p>
-                <p class="svc-card-desc">Responsive, pixel-perfect UIs with modern React and clean component
-                    architecture.</p>
-                <div class="stack-chips">
-                    <span class="chip">React.js</span>
-                    <span class="chip">Tailwind</span>
-                    <span class="chip">Redux</span>
+                <p class="svc-card-desc">
+                    Crafting pixel-perfect, blazing-fast UIs using React.js with clean component architecture, smooth
+                    animations, and rock-solid state management.
+                </p>
+                <div class="svc-chips">
+                    <span class="svc-chip">React.js</span>
+                    <span class="svc-chip">Tailwind CSS</span>
+                    <span class="svc-chip">Redux</span>
+                    <span class="svc-chip">Next.js</span>
                 </div>
+                <span class="svc-number">01</span>
             </div>
 
             <!-- Card 2 -->
-            <div class="svc-card teal">
-                <div class="svc-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
+            <div class="svc-card c-teal fade-up delay-2">
+                <div class="svc-icon-wrap">
+                    <svg width="28" height="28" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
                         <circle cx="12" cy="12" r="1" />
                         <circle cx="7" cy="12" r="1" />
                         <circle cx="17" cy="12" r="1" />
                     </svg>
                 </div>
-                <p class="svc-card-title">Backend & APIs</p>
-                <p class="svc-card-desc">Secure, scalable RESTful APIs with proper auth, validation, and error handling.
+                <p class="svc-card-title">Backend & REST APIs</p>
+                <p class="svc-card-desc">
+                    Building secure, scalable server-side systems with proper authentication, JWT tokens, rate limiting,
+                    validation, and clean error handling.
                 </p>
-                <div class="stack-chips">
-                    <span class="chip">Node.js</span>
-                    <span class="chip">Express</span>
-                    <span class="chip">JWT</span>
+                <div class="svc-chips">
+                    <span class="svc-chip">Node.js</span>
+                    <span class="svc-chip">Express.js</span>
+                    <span class="svc-chip">JWT Auth</span>
+                    <span class="svc-chip">REST APIs</span>
                 </div>
+                <span class="svc-number">02</span>
             </div>
 
             <!-- Card 3 -->
-            <div class="svc-card coral">
-                <div class="svc-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D85A30" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
+            <div class="svc-card c-coral fade-up delay-3">
+                <div class="svc-icon-wrap">
+                    <svg width="28" height="28" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <ellipse cx="12" cy="5" rx="9" ry="3" />
                         <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
                         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
                     </svg>
                 </div>
                 <p class="svc-card-title">Database Design</p>
-                <p class="svc-card-desc">Efficient schema design, indexing, and queries for high-performance data
-                    access.</p>
-                <div class="stack-chips">
-                    <span class="chip">MongoDB</span>
-                    <span class="chip">Mongoose</span>
+                <p class="svc-card-desc">
+                    Designing efficient MongoDB schemas with smart indexing, aggregation pipelines, and Mongoose models
+                    built for performance and scale.
+                </p>
+                <div class="svc-chips">
+                    <span class="svc-chip">MongoDB</span>
+                    <span class="svc-chip">Mongoose</span>
+                    <span class="svc-chip">Aggregation</span>
                 </div>
+                <span class="svc-number">03</span>
             </div>
 
             <!-- Card 4 -->
-            <div class="svc-card purple">
-                <div class="svc-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F77DD" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
+            <div class="svc-card c-purple fade-up delay-4">
+                <div class="svc-icon-wrap">
+                    <svg width="28" height="28" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
                 </div>
                 <p class="svc-card-title">Full-Stack Apps</p>
-                <p class="svc-card-desc">End-to-end web solutions — from concept to deployment, built to scale.</p>
-                <div class="stack-chips">
-                    <span class="chip">MERN</span>
-                    <span class="chip">Vercel</span>
-                    <span class="chip">Render</span>
+                <p class="svc-card-desc">
+                    End-to-end MERN applications from concept to cloud deployment — scalable architecture, CI/CD ready,
+                    production-grade from day one.
+                </p>
+                <div class="svc-chips">
+                    <span class="svc-chip">MERN Stack</span>
+                    <span class="svc-chip">Vercel</span>
+                    <span class="svc-chip">Render</span>
+                    <span class="svc-chip">Docker</span>
                 </div>
+                <span class="svc-number">04</span>
             </div>
 
-        </div>
-
-        <!-- Divider -->
-        <div class="svc-divider">
-            <div class="svc-divider-line"></div>
-            <span style="font-size: 12px; color: #999; white-space: nowrap;">solving real-world problems</span>
-            <div class="svc-divider-line"></div>
         </div>
     </div>
-    <!-- End Services Section -->
 
-    <!-- Service Cards Section -->
-    <div class="h-16"></div>
+    <!-- ════════════ SKILLS ════════════ -->
+    <section
+        style="background:#fff; padding:5rem 2rem; margin:2rem; border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.05);">
+        <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:4rem; align-items:center;">
+            <div style="flex:1; min-width:280px;">
+                <img src="/Assetes/formal.png"
+                    style="width:100%; height:520px; object-fit:cover; border-radius:20px; box-shadow:0 16px 48px rgba(0,0,0,0.1);"
+                    alt="Skills">
+            </div>
+            <div style="flex:1; min-width:280px;">
+                <span class="label"><span class="label-dot"></span>Technical Skills</span>
+                <h2 class="display" style="font-size:2.2rem; margin:1.2rem 0 1rem;">Expertise &<br>Technologies</h2>
+                <p style="color:#64748b; line-height:1.8; margin:0 0 2.5rem;">Continuously leveling up with modern web
+                    technologies to build fast, adaptive, and production-ready applications.</p>
 
-    <div class="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-20">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                <div
-                    class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200 shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2 hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#ff6b4a]/10 to-purple-100 rounded-bl-full">
+                <div class="skill-bar-wrap">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span style="font-weight:600; color:#0f172a;">React & Frontend</span>
+                        <span style="color:#2563eb; font-weight:600;">90%</span>
                     </div>
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-[#ff6b4a] to-orange-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width:90%;"></div>
                     </div>
-                    <h3 class="font-bold text-2xl mb-4 text-gray-800">Web Development</h3>
-                    <p class="text-gray-600 leading-relaxed">Building responsive, fast, and scalable web applications
-                        using modern technologies like React, Node.js, and Express with clean UI and optimized
-                        performance.</p>
                 </div>
 
-                <div
-                    class="group p-8 bg-white/80 backdrop-blur-md border border-gray-200 shadow-xl rounded-2xl hover:shadow-2xl hover:-translate-y-2 hover:border-[#ff6b4a] transition-all duration-300 relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-[#ff6b4a]/10 rounded-bl-full">
+                <div class="skill-bar-wrap">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span style="font-weight:600; color:#0f172a;">Node.js & Backend</span>
+                        <span style="color:#2563eb; font-weight:600;">85%</span>
                     </div>
-                    <div
-                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                            </path>
-                        </svg>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width:85%;"></div>
                     </div>
-                    <h3 class="font-bold text-2xl mb-4 text-gray-800">E-commerce Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">Developing secure and scalable e-commerce platforms with
-                        product management, authentication, payment integration, and admin dashboards using the MERN
-                        stack.</p>
                 </div>
 
+                <div class="skill-bar-wrap">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span style="font-weight:600; color:#0f172a;">MongoDB & Databases</span>
+                        <span style="color:#2563eb; font-weight:600;">80%</span>
+                    </div>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width:80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-wrap">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span style="font-weight:600; color:#0f172a;">UI/UX & Design</span>
+                        <span style="color:#2563eb; font-weight:600;">78%</span>
+                    </div>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width:78%;"></div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Stats -->
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-10">
+    <!-- ════════════ PROVIDER SERVICES ════════════ -->
+    <div style="padding:4rem 2rem 2rem; text-align:center;">
+        <span class="label" style="color:#ea580c; background:#fff7ed; border-color:#fdba74;"><span
+                style="background:#ea580c;" class="label-dot"></span>Services</span>
+        <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem); margin:1.2rem 0 1rem;">My Provider Services</h2>
+        <p style="color:#64748b; max-width:500px; margin:0 auto; line-height:1.8;">Delivering modern, responsive, and
+            high-performance web solutions tailored to your needs.</p>
+    </div>
+
+    <div
+        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin:2rem; padding-bottom:1rem;">
+
+        <div class="provider-card p1">
+            <div class="absolute inset-0"
+                style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(251,146,60,0.08) 0%,transparent 60%);border-radius:20px;">
+            </div>
+            <div class="provider-icon" style="background:linear-gradient(135deg,#ff7e21,#fb923c);">
+                <img style="width:34px;" src="Assetes/sa8.png" alt="">
+            </div>
+            <h3
+                style="font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; color:#0f172a; margin:0 0 0.7rem;">
+                Unique Design</h3>
+            <p style="color:#64748b; line-height:1.7; font-size:0.9rem; margin:0;">Creative, modern, and user-focused
+                layouts that leave a lasting impression across every device.</p>
+        </div>
+
+        <div class="provider-card p2">
             <div
-                class="flex flex-col md:flex-row justify-between items-center gap-6 p-8 md:p-20 bg-blue-600 shadow-md hover:bg-blue-700 transition duration-300 rounded-xl">
-                <div class="text-center flex-1">
-                    <h3 class="font-bold text-3xl md:text-4xl mb-1 text-white">32k</h3>
-                    <p class="text-gray-100">Web Designer</p>
-                </div>
+                style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(129,140,248,0.08) 0%,transparent 60%);border-radius:20px;">
             </div>
-        </div>
-
-        <!-- Skill Hub -->
-        <section class="bg-white py-16 md:py-24">
-            <div class="max-w-7xl mx-8 px-6 md:px-8 lg:px-12">
-                <div class="flex flex-col lg:flex-row gap-16 items-center">
-                    <div class="flex-1">
-                        <img src="/Assetes/formal.png" class="w-full h-[600px] object-cover rounded-xl shadow-md"
-                            alt="Skills">
-                    </div>
-                    <div class="flex-1 space-y-6">
-                        <p class="text-blue-600 uppercase tracking-wider font-medium text-sm">Technical Skills</p>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Expertise & Technologies</h2>
-                        <p class="text-gray-600 text-lg leading-relaxed">Continuously developing skills in modern web
-                            technologies to deliver responsive and adaptive design solutions.</p>
-                        <div class="space-y-6 pt-4">
-                            <div>
-                                <div class="flex justify-between mb-2"><span class="font-semibold text-gray-800">React &
-                                        Frontend</span><span class="text-gray-600">90%</span></div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2"><span class="font-semibold text-gray-800">Node.js
-                                        & Backend</span><span class="text-gray-600">85%</span></div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2"><span class="font-semibold text-gray-800">MongoDB
-                                        & Databases</span><span class="text-gray-600">80%</span></div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="provider-icon" style="background:linear-gradient(135deg,#6d28d9,#818cf8);">
+                <img style="width:34px;" src="Assetes/sr1.png" alt="">
             </div>
-        </section>
-
-        <!-- Portfolio Filter -->
-        <input type="radio" name="portfolio" id="all" checked hidden>
-        <input type="radio" name="portfolio" id="web" hidden>
-        <input type="radio" name="portfolio" id="photo" hidden>
-
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-20 text-center" id="projects">
-            <p class="text-blue-600 uppercase tracking-wide font-semibold">Portfolio</p>
-            <h1 class="text-3xl md:text-4xl font-bold py-5 text-gray-800">My Amazing Works</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">Most common methods for designing websites that
-                work well on desktop is responsive and adaptive design</p>
-            <ul class="flex flex-wrap justify-center gap-4 md:gap-8 font-semibold py-10">
-                <li><label for="all" class="cursor-pointer text-gray-700 hover:text-blue-600">Show All</label></li>
-                <li><label for="web" class="cursor-pointer text-gray-700 hover:text-blue-600">Website</label></li>
-                <li><label for="photo" class="cursor-pointer text-gray-700 hover:text-blue-600">Photo</label></li>
-            </ul>
+            <h3
+                style="font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; color:#0f172a; margin:0 0 0.7rem;">
+                Responsive</h3>
+            <p style="color:#64748b; line-height:1.7; font-size:0.9rem; margin:0;">Fully responsive designs that adapt
+                perfectly across desktop, tablet, and mobile for seamless UX.</p>
         </div>
 
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <img class="portfolio web shadow-lg w-full rounded-lg transition-transform duration-500 hover:scale-105"
-                    src="Assetes/ps11.png">
-                <img class="portfolio web shadow-lg w-full rounded-lg transition-transform duration-500 hover:scale-105"
-                    src="Assetes/ps2.png">
-                <img class="portfolio web shadow-lg w-full rounded-lg transition-transform duration-500 hover:scale-105"
-                    src="Assetes/s51.png">
-                <img class="portfolio photo shadow-lg w-full rounded-lg transition-transform duration-500 hover:scale-105"
-                    src="Assetes/s3.png">
-                <img class="portfolio photo shadow-lg w-full rounded-lg transition-transform duration-500 hover:scale-105"
-                    src="Assetes/s4.png">
-            </div>
-        </div>
-
-        <!-- Provider Services -->
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-20 text-center">
-            <p class="text-[#ff6b4a] uppercase tracking-wide font-semibold">Service</p>
-            <h1 class="text-3xl md:text-4xl font-bold py-5">My Provider Services</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">Most common methods for designing websites that
-                work well on desktop is responsive and adaptive design</p>
-        </div>
-
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div
-                    class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#ffb224]/25 via-transparent to-purple-400/25">
-                    </div>
-                    <div
-                        class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7e21] to-orange-500 shadow-lg mb-6">
-                        <img class="w-12" src="Assetes/sa8.png" alt="">
-                    </div>
-                    <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">Unique Design</h3>
-                    <p class="relative z-10 text-gray-600 leading-relaxed">Most common methods for designing websites
-                        that work well on desktop with modern, creative, and user-focused layouts.</p>
-                </div>
-
-                <div
-                    class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/25 via-transparent to-indigo-400/25">
-                    </div>
-                    <div
-                        class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-lg mb-6">
-                        <img class="w-12" src="Assetes/sr1.png" alt="">
-                    </div>
-                    <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">Responsive</h3>
-                    <p class="relative z-10 text-gray-600 leading-relaxed">Fully responsive designs that adapt perfectly
-                        across desktop, tablet, and mobile devices for better user experience.</p>
-                </div>
-
-                <div
-                    class="relative p-8 rounded-3xl bg-white shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-400/25 via-transparent to-teal-400/25">
-                    </div>
-                    <div
-                        class="relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-teal-500 shadow-lg mb-6">
-                        <img class="w-12" src="Assetes/ud.png" alt="">
-                    </div>
-                    <h3 class="relative z-10 text-2xl font-bold text-gray-800 mb-3">24 Hours Service</h3>
-                    <p class="relative z-10 text-gray-600 leading-relaxed">Round-the-clock support to ensure your
-                        website runs smoothly with quick fixes, updates, and professional assistance anytime.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-20" id="contact">
+        <div class="provider-card p3">
             <div
-                class="max-w-8xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-700 shadow-2xl text-white p-8 md:p-12 rounded-2xl">
-                <div class="relative z-10">
-                    <h2 class="text-4xl font-bold text-center mb-3">Get In Touch</h2>
-                    <p class="text-center text-white/80 mb-10">Let's discuss your next project</p>
+                style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(52,211,153,0.08) 0%,transparent 60%);border-radius:20px;">
+            </div>
+            <div class="provider-icon" style="background:linear-gradient(135deg,#059669,#34d399);">
+                <img style="width:34px;" src="Assetes/ud.png" alt="">
+            </div>
+            <h3
+                style="font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; color:#0f172a; margin:0 0 0.7rem;">
+                24/7 Support</h3>
+            <p style="color:#64748b; line-height:1.7; font-size:0.9rem; margin:0;">Round-the-clock assistance ensuring
+                your site runs smoothly with fast fixes and professional support.</p>
+        </div>
 
-                    <form action="https://formspree.io/f/mdalnzwv" method="POST"
-                        class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="flex flex-col">
-                            <label class="mb-2 text-sm font-medium text-white/90">Your Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required
-                                class="w-full px-5 py-3.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/15 focus:border-white/40 transition">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="mb-2 text-sm font-medium text-white/90">Email Address</label>
-                            <input type="email" name="email" placeholder="example@email.com" required
-                                class="w-full px-5 py-3.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/15 focus:border-white/40 transition">
-                        </div>
-                        <div class="md:col-span-2 flex flex-col">
-                            <label class="mb-2 text-sm font-medium text-white/90">Message</label>
-                            <textarea name="message" rows="5" placeholder="Write your message..." required
-                                class="w-full px-5 py-3.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/15 focus:border-white/40 transition resize-none"></textarea>
-                        </div>
-                        <div class="md:col-span-2 mt-4">
-                            <button type="submit"
-                                class="w-full bg-white text-blue-600 font-semibold py-3.5 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">Send
-                                Message</button>
-                        </div>
-                        <input type="hidden" name="_subject" value="🔥 New Client Message from Portfolio">
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/#contact-success">
-                    </form>
+    </div>
 
-                    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div
-                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
-                            <svg class="w-8 h-8 mx-auto mb-3 text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <p class="text-white font-semibold text-lg mb-1">Location</p>
-                            <p class="text-white/80 text-sm">Dhaka, Bangladesh</p>
-                        </div>
-                        <div
-                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
-                            <svg class="w-8 h-8 mx-auto mb-3 text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                </path>
-                            </svg>
-                            <p class="text-white font-semibold text-lg mb-1">Phone</p>
-                            <p class="text-white/80 text-sm">+880 1706-079313</p>
-                        </div>
-                        <div
-                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
-                            <svg class="w-8 h-8 mx-auto mb-3 text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <p class="text-white font-semibold text-lg mb-1">Email</p>
-                            <p class="text-white/80 text-sm">sakib15-2223@diu.edu.bd</p>
-                        </div>
+    <!-- ════════════ PORTFOLIO ════════════ -->
+    <input type="radio" name="portfolio" id="all" checked hidden>
+    <input type="radio" name="portfolio" id="web" hidden>
+    <input type="radio" name="portfolio" id="photo" hidden>
+
+    <div style="padding:4rem 2rem 1rem; text-align:center;" id="projects">
+        <span class="label"><span class="label-dot"></span>Portfolio</span>
+        <h2 class="display" style="font-size:clamp(1.8rem,4vw,2.8rem); margin:1.2rem 0 1rem;">My Amazing Works</h2>
+        <p style="color:#64748b; max-width:500px; margin:0 auto; line-height:1.8;">
+            Responsive and adaptive web designs that look stunning on every screen size.
+        </p>
+        <ul
+            style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; list-style:none; padding:2rem 0; margin:0; font-weight:600;">
+            <li><label for="all"
+                    style="cursor:pointer; padding:0.5rem 1.4rem; border-radius:100px; background:#fff; border:1px solid #e2e8f0; color:#374151;">Show
+                    All</label></li>
+            <li><label for="web"
+                    style="cursor:pointer; padding:0.5rem 1.4rem; border-radius:100px; background:#fff; border:1px solid #e2e8f0; color:#374151;">Website</label>
+            </li>
+            <li><label for="photo"
+                    style="cursor:pointer; padding:0.5rem 1.4rem; border-radius:100px; background:#fff; border:1px solid #e2e8f0; color:#374151;">Photo</label>
+            </li>
+        </ul>
+    </div>
+
+    <div
+        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; margin:0 2rem 4rem;">
+        <img class="portfolio web" src="Assetes/ps11.png"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.1); transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img class="portfolio web" src="Assetes/ps2.png"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.1); transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img class="portfolio web" src="Assetes/s51.png"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.1); transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img class="portfolio photo" src="Assetes/s3.png"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.1); transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        <img class="portfolio photo" src="Assetes/s4.png"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.1); transition:transform 0.4s;"
+            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+
+    <!-- ════════════ CONTACT ════════════ -->
+    <div style="margin:2rem;" id="contact">
+        <div class="contact-wrap">
+            <div style="position:relative; z-index:1;">
+                <div style="text-align:center; margin-bottom:2.5rem;">
+                    <span class="label"
+                        style="color:rgba(255,255,255,0.9); background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2);"><span
+                            style="background:rgba(255,255,255,0.8);" class="label-dot"></span>Let's Talk</span>
+                    <h2 class="display" style="color:#fff; font-size:clamp(1.8rem,4vw,2.8rem); margin:1rem 0 0.5rem;">
+                        Get In Touch</h2>
+                    <p style="color:rgba(255,255,255,0.7);">Let's discuss your next project</p>
+                </div>
+
+                <form action="https://formspree.io/f/mdalnzwv" method="POST"
+                    style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+                    <div style="display:flex; flex-direction:column;">
+                        <label
+                            style="font-size:0.85rem; font-weight:500; color:rgba(255,255,255,0.85); margin-bottom:6px;">Your
+                            Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required
+                            style="padding:0.85rem 1.2rem; border-radius:12px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; font-family:inherit; font-size:0.9rem; outline:none; backdrop-filter:blur(4px);"
+                            onfocus="this.style.background='rgba(255,255,255,0.15)'"
+                            onblur="this.style.background='rgba(255,255,255,0.1)'">
+                    </div>
+                    <div style="display:flex; flex-direction:column;">
+                        <label
+                            style="font-size:0.85rem; font-weight:500; color:rgba(255,255,255,0.85); margin-bottom:6px;">Email
+                            Address</label>
+                        <input type="email" name="email" placeholder="example@email.com" required
+                            style="padding:0.85rem 1.2rem; border-radius:12px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; font-family:inherit; font-size:0.9rem; outline:none;"
+                            onfocus="this.style.background='rgba(255,255,255,0.15)'"
+                            onblur="this.style.background='rgba(255,255,255,0.1)'">
+                    </div>
+                    <div style="grid-column:1/-1; display:flex; flex-direction:column;">
+                        <label
+                            style="font-size:0.85rem; font-weight:500; color:rgba(255,255,255,0.85); margin-bottom:6px;">Message</label>
+                        <textarea name="message" rows="5" placeholder="Write your message..." required
+                            style="padding:0.85rem 1.2rem; border-radius:12px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:#fff; font-family:inherit; font-size:0.9rem; outline:none; resize:none;"
+                            onfocus="this.style.background='rgba(255,255,255,0.15)'"
+                            onblur="this.style.background='rgba(255,255,255,0.1)'"></textarea>
+                    </div>
+                    <div style="grid-column:1/-1;">
+                        <button type="submit"
+                            style="width:100%; background:#fff; color:#1d4ed8; padding:0.9rem; border-radius:12px; font-weight:700; font-family:'Syne',sans-serif; font-size:1rem; border:none; cursor:pointer; transition:background 0.2s;"
+                            onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
+                            Send Message →
+                        </button>
+                    </div>
+                    <input type="hidden" name="_subject" value="🔥 New Client Message from Portfolio">
+                </form>
+
+                <div
+                    style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-top:2.5rem;">
+                    <div
+                        style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:1.5rem; text-align:center; backdrop-filter:blur(4px);">
+                        <svg style="width:28px;height:28px;margin:0 auto 0.7rem;display:block;color:#fff;" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <p style="color:#fff; font-weight:600; margin:0 0 4px;">Location</p>
+                        <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin:0;">Dhaka, Bangladesh</p>
+                    </div>
+                    <div
+                        style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:1.5rem; text-align:center; backdrop-filter:blur(4px);">
+                        <svg style="width:28px;height:28px;margin:0 auto 0.7rem;display:block;" fill="none"
+                            stroke="white" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <p style="color:#fff; font-weight:600; margin:0 0 4px;">Phone</p>
+                        <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin:0;">+880 1706-079313</p>
+                    </div>
+                    <div
+                        style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:1.5rem; text-align:center; backdrop-filter:blur(4px);">
+                        <svg style="width:28px;height:28px;margin:0 auto 0.7rem;display:block;" fill="none"
+                            stroke="white" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <p style="color:#fff; font-weight:600; margin:0 0 4px;">Email</p>
+                        <p style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin:0;">sakib15-2223@diu.edu.bd</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Map -->
-        <div class="mx-8 px-4 md:px-6 lg:px-8 my-20">
-            <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Dhaka City Map</h2>
-            <div class="w-full h-64 md:h-96 rounded-xl shadow-md overflow-hidden">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902191327913!2d90.39146361498138!3d23.750885594617695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b04b4b94e9%3A0x9f8a6a48f7c3a41b!2sDhaka!5e0!3m2!1sen!2sbd!4v1693802522221!5m2!1sen!2sbd"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+    <!-- ════════════ MAP ════════════ -->
+    <div style="margin:2rem;">
+        <h2 class="display" style="font-size:1.5rem; text-align:center; margin-bottom:1.5rem;">Dhaka City Map</h2>
+        <div style="border-radius:20px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.1); height:360px;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902191327913!2d90.39146361498138!3d23.750885594617695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b04b4b94e9%3A0x9f8a6a48f7c3a41b!2sDhaka!5e0!3m2!1sen!2sbd!4v1693802522221!5m2!1sen!2sbd"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
+    </div>
 
-        <script>
-            function toggleMenu() {
-                const menu = document.getElementById('menu');
-                menu.classList.toggle('hidden');
-                menu.classList.toggle('flex');
-            }
-        </script>
+    <div style="height:2rem;"></div>
+
+    <script>
+        function toggleMenu() {
+            const m = document.getElementById('menu');
+            m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+            m.style.flexDirection = 'column';
+            m.style.position = 'absolute';
+            m.style.top = '70px';
+            m.style.left = '0';
+            m.style.right = '0';
+            m.style.background = '#fff';
+            m.style.padding = '1rem 2rem';
+            m.style.borderBottom = '1px solid #e2e8f0';
+        }
+    </script>
 
 </body>
 
